@@ -53,3 +53,18 @@ header.style.background='rgba(0,0,0,.4)';
 }
 
 });
+
+const whatsappDropdown = document.querySelector(".whatsapp-dropdown");
+const whatsappToggle = document.querySelector(".whatsapp-toggle");
+
+if(whatsappDropdown && whatsappToggle){
+    whatsappToggle.addEventListener("click", () => {
+        whatsappDropdown.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+        if(!whatsappDropdown.contains(e.target)){
+            whatsappDropdown.classList.remove("active");
+        }
+    });
+}

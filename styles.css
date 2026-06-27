@@ -83,90 +83,50 @@ section{
 .header{
 
     position:fixed;
-
     top:0;
     left:0;
 
     width:100%;
+    height:95px;
 
-    height:85px;
-
-    padding:0 8%;
+    padding:0 4%;
 
     display:flex;
+    align-items:center;
 
     justify-content:space-between;
 
-    align-items:center;
+    gap:50px;
 
-    z-index:1000;
-
-    background:rgba(0,0,0,.75);
-
+    background:rgba(0,0,0,.85);
     backdrop-filter:blur(20px);
 
     border-bottom:1px solid rgba(91,212,59,.08);
 
+    z-index:1000;
 }
 
 .logo{
-
     display:flex;
-
     align-items:center;
-
-    gap:12px;
-
 }
 
-.logo img{
-
-    width:48px;
-
-    height:48px;
-
+.logo-brand{
+    width:320px;
+    height:auto;
+    display:block;
     object-fit:contain;
-
+    transition:.3s;
 }
 
-.logo-text{
-
-    display:flex;
-
-    flex-direction:column;
-
-    line-height:1;
-
-}
-
-.logo-text strong{
-
-    color:white;
-
-    font-size:1.1rem;
-
-    font-weight:900;
-
-    letter-spacing:2px;
-
-}
-
-.logo-text span{
-
-    color:#5bd43b;
-
-    font-size:.8rem;
-
-    font-weight:600;
-
+.logo-brand:hover{
+    transform:scale(1.03);
 }
 
 nav{
-
+    margin-left:auto;
     display:flex;
-
     gap:35px;
-
 }
 
 nav a{
@@ -188,23 +148,14 @@ nav a:hover{
 /* HERO */
 
 .hero{
-
     position:relative;
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     overflow:hidden;
-
     background:
-
     radial-gradient(
         circle at top,
         rgba(91,212,59,.12),
@@ -214,31 +165,16 @@ nav a:hover{
 }
 
 .hero::before{
-
     content:"";
-
     position:absolute;
-
-    inset:-5%;
-
-    background-image:url('../images/logo.png');
-
+    inset:0;
+    background-image:url("../images/trebol.webp");
     background-repeat:no-repeat;
-
-    background-position:center center;
-
-    background-size:1500px;
-
-    opacity:.22;
-
-    filter:
-        contrast(1.35)
-        brightness(.95);
-
-    mix-blend-mode:screen;
-
+    background-position:center;
+    background-size:900px;
+    opacity:.08;
+    filter:grayscale(100%) brightness(1.2);
     pointer-events:none;
-
 }
 
 .hero::after{
@@ -284,45 +220,27 @@ nav a:hover{
 }
 
 .hero-content{
-
     position:relative;
-
     z-index:2;
-
     max-width:950px;
-
 }
 
 .tag{
-
     display:inline-block;
-
     padding:12px 20px;
-
     border:1px solid rgba(91,212,59,.15);
-
     border-radius:999px;
-
     color:var(--primary);
-
     margin-bottom:25px;
-
     font-size:.85rem;
-
     letter-spacing:2px;
-
 }
 
 .hero h1{
-
-    font-size:clamp(3rem,9vw,7rem);
-
-    line-height:.9;
-
-    font-weight:900;
-
-    margin-bottom:25px;
-
+    font-family:"Bebas Neue",sans-serif;
+    font-size:clamp(5rem,12vw,10rem);
+    letter-spacing:3px;
+    line-height:.85;
 }
 
 .hero p{
@@ -596,6 +514,20 @@ nav a:hover{
 
     color:var(--muted);
 
+}
+
+.contact .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin-top:15px;
+    font-size:1.05rem;
+    padding:20px 36px;
+    box-shadow:0 15px 40px rgba(91,212,59,.25);
+}
+
+.contact .btn-primary i{
+    font-size:1.35rem;
 }
 
 /* EDITOR */
@@ -883,6 +815,25 @@ footer{
 
 }
 
+.story-logo{
+    display:flex;
+    justify-content:center;
+    margin:20px 0 70px;
+}
+
+.story-logo img{
+    width:100%;
+    max-width:520px;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(0 20px 35px rgba(0,0,0,.45));
+    transition:.35s;
+}
+
+.story-logo img:hover{
+    transform:scale(1.03);
+}
+
 .footer-social{
 
     display:flex;
@@ -934,6 +885,78 @@ footer{
     color:#666;
     font-size:.9rem;
 }
+
+.whatsapp-dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.whatsapp-toggle{
+    border:0;
+    cursor:pointer;
+    gap:12px;
+}
+
+.whatsapp-menu{
+    position:absolute;
+    left:50%;
+    top:calc(100% + 14px);
+    transform:translateX(-50%);
+    width:280px;
+    padding:12px;
+    border-radius:22px;
+    background:#101010;
+    border:1px solid rgba(91,212,59,.25);
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+    display:none;
+    z-index:20;
+}
+
+.whatsapp-menu a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:14px 18px;
+    border-radius:16px;
+    color:white;
+    font-weight:700;
+    transition:.3s;
+}
+
+.whatsapp-menu a:hover{
+    background:rgba(91,212,59,.14);
+    color:var(--primary);
+}
+
+.whatsapp-dropdown.active .whatsapp-menu{
+    display:block;
+}
+
+@media(max-width:768px){
+    .whatsapp-dropdown{
+        width:100%;
+    }
+
+    .whatsapp-toggle{
+        width:100%;
+        justify-content:center;
+    }
+
+    .whatsapp-menu{
+        width:100%;
+    }
+}
+
+@media(max-width:768px){
+    .whatsapp-options{
+        flex-direction:column;
+    }
+
+    .whatsapp-options .btn-primary{
+        width:100%;
+    }
+}
+
 /* RESPONSIVE */
 
 @media(max-width:1100px){
@@ -941,32 +964,99 @@ footer{
     .service-grid,
     .product-grid,
     .timeline{
-
-        grid-template-columns:1fr 1fr;
-
+        grid-template-columns:repeat(2,1fr);
     }
 
     .editor-layout,
     .story-content{
-
         grid-template-columns:1fr;
+    }
 
+    .story-logo{
+        margin:10px 0 50px;
+    }
+
+    .story-logo img{
+        max-width:420px;
     }
 
 }
 
 @media(max-width:768px){
 
+    .header{
+        height:80px;
+        padding:0 20px;
+    }
+
+    .logo-brand{
+        width:180px;
+    }
+
     nav{
-
         display:none;
+    }
 
+    section{
+        padding:80px 24px;
+    }
+
+    .hero{
+        min-height:100svh;
+    }
+
+    .hero::before{
+        background-size:280px;
+        opacity:.08;
+    }
+
+    .hero h1{
+        font-size:clamp(3.2rem,16vw,5rem);
+        line-height:.9;
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:1rem;
+        max-width:100%;
     }
 
     .hero-actions{
-
         flex-direction:column;
+        gap:16px;
+    }
 
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        justify-content:center;
+    }
+
+    .section-title{
+        margin-bottom:45px;
+    }
+
+    .section-title h2{
+        font-size:2.2rem;
+    }
+
+    .story-logo{
+        margin:0 0 40px;
+    }
+
+    .story-logo img{
+        max-width:260px;
+    }
+
+    .story-content{
+        grid-template-columns:1fr;
+        gap:25px;
+        text-align:center;
+    }
+
+    .story-content p{
+        font-size:1rem;
+        line-height:1.9;
     }
 
     .service-grid,
@@ -974,21 +1064,48 @@ footer{
     .timeline,
     .gallery-grid,
     .testimonial-grid{
-
         grid-template-columns:1fr;
-
     }
 
-    .hero::before{
-
-        background-size:300px;
-
+    .product-image{
+        height:240px;
     }
 
-    section{
+    .suit-preview{
+        min-height:350px;
+    }
 
-        padding:90px 6%;
+    .editor-panel{
+        padding:25px;
+    }
 
+    .gallery-grid div{
+        height:240px;
+    }
+
+    .contact h2{
+        font-size:2rem;
+    }
+
+    .contact .btn-primary{
+        width:100%;
+        justify-content:center;
+    }
+
+    .footer-logo img{
+        width:70px;
+    }
+
+    .footer-social{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .footer-social a{
+        width:100%;
+        max-width:320px;
+        justify-content:center;
     }
 
 }

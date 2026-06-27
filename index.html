@@ -6,6 +6,7 @@
 <title>Killian Biker Shop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
@@ -13,17 +14,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <body>
 <header class="header">
-
-    <div class="logo">
-
-    <img
-    src="../images/logo.png"
-    alt="Killian Biker Shop">
-
-    <div class="logo-text">
-        <strong>KILLIAN</strong>
-        <span>Biker Shop</span>
-    </div>
+<div class="logo">
+    <img src="images/killian-logo.webp" class="logo-brand" alt="Killian Biker Shop">
+</div>
 
 </div>
     <nav>
@@ -69,15 +62,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <div class="section-title">
         <span>NUESTRA HISTORIA</span>
-        <h2>Killian Biker Shop </h2>
+    </div>
+
+    <div class="story-logo">
+        <img src="images/killian-logo.webp" alt="Killian Biker Shop">
     </div>
 
     <div class="story-content">
 
         <p>
             Killian Biker Shop nace con el objetivo de ofrecer
-            monotrajes personalizados para pilotos
-            apasionados por la velocidad.
+            monotrajes personalizados para pilotos apasionados
+            por la velocidad.
 
             Nuestro enfoque combina diseño,
             protección y personalización total.
@@ -341,37 +337,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </section>
 
-<section class="faq">
-
-    <div class="section-title">
-
-        <span>PREGUNTAS FRECUENTES</span>
-
-        <h2>FAQ</h2>
-
-    </div>
-
-</section>
-
 <section id="contacto" class="contact">
 
-    <h2>
+    <h2>¿Listo para diseñar tu traje?</h2>
 
-        ¿Listo para diseñar tu traje?
+    <div class="whatsapp-dropdown">
+        <button class="btn-primary whatsapp-toggle" type="button">
+            <i class="fab fa-whatsapp"></i>
+            Contactar por WhatsApp
+        </button>
 
-    </h2>
-
-    <a href="#">
-
-        Contactar por WhatsApp
-
-    </a>
+        <div class="whatsapp-menu">
+            <a href="https://wa.me/52NUMERO1" target="_blank">Ventas</a>
+            <a href="https://wa.me/52NUMERO2" target="_blank">Diseño</a>
+            <a href="https://wa.me/52NUMERO3" target="_blank">Soporte</a>
+        </div>
+    </div>
 
 </section>
 
 <footer>
     <div class="footer-logo">
-        <img src="../images/logo.png" alt="Killian Biker Shop">
+        <img src="../images/trebol.webp" alt="Killian Biker Shop">
         <h3>Killian Biker Shop</h3>
         <p>
             Diseñando monotrajes personalizados para pilotos apasionados por la velocidad.
@@ -400,5 +387,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         © 2026 Killian Biker Shop · Todos los derechos reservados.
     </div>
 </footer>
+
+<script>
+const whatsappDropdown = document.querySelector(".whatsapp-dropdown");
+const whatsappToggle = document.querySelector(".whatsapp-toggle");
+
+whatsappToggle.addEventListener("click", () => {
+    whatsappDropdown.classList.toggle("active");
+});
+
+document.addEventListener("click", (e) => {
+    if(!whatsappDropdown.contains(e.target)){
+        whatsappDropdown.classList.remove("active");
+    }
+});
+</script>
+
 </body>
 </html>
