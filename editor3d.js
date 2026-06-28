@@ -44,10 +44,13 @@ if(container){
     controls.minDistance=2.5;
     controls.maxDistance=7;
     controls.target.set(0,1,0);
+let model=null;
 
-    let model=null;
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath("https://unpkg.com/three@0.160.0/examples/jsm/libs/draco/");
 
-    const loader=new GLTFLoader();
+const loader = new GLTFLoader();
+loader.setDRACOLoader(dracoLoader);
 
     loader.load(
         "models/traje.glb",
