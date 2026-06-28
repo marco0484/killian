@@ -5,6 +5,9 @@ import { OrbitControls } from "https://unpkg.com/three@0.160.0/examples/jsm/cont
 
 const container=document.getElementById("viewer3d");
 
+console.log("viewer3d:",container);
+console.log("editor3d cargado");
+
 if(container){
 
     const scene=new THREE.Scene();
