@@ -161,7 +161,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         </article>
 
         <article class="suit-card">
-            <h3>Traje Negro</h3>
+            <h3>Linea Vipers</h3>
             <div class="suit-images">
                 <img src="images/tnegrofrontal.webp" alt="Traje negro frontal">
                 <img src="images/tnegrotrasero.webp" alt="Traje negro trasero">
@@ -169,7 +169,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         </article>
 
         <article class="suit-card">
-            <h3>Traje Rojo</h3>
+            <h3>Linea Vipers</h3>
             <div class="suit-images">
                 <img src="images/trojofrontal.webp" alt="Traje rojo frontal">
                 <img src="images/trojotrasero.webp" alt="Traje rojo trasero">
@@ -183,48 +183,40 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <section id="editor" class="editor">
 
     <div class="section-title">
-
         <span>EDITOR EN TIEMPO REAL</span>
-
         <h2>Diseña tu traje</h2>
-
     </div>
 
     <div class="editor-layout">
-
         <div class="suit-preview">
+    <div id="viewer3d"></div>
 
-            <div class="preview-placeholder">
-
-                Vista previa del traje
-
-            </div>
-
-        </div>
+</div>
 
         <div class="editor-panel">
 
             <label>Nombre</label>
-
-            <input type="text" placeholder="">
+            <input id="riderName" type="text" placeholder="Ej. MARCO" maxlength="14">
 
             <label>Número</label>
+            <input id="riderNumber" type="text" placeholder="99" maxlength="3">
 
-            <input type="text" placeholder="99">
+            <label>Línea</label>
+            <div class="editor-options">
+                <button class="option-btn active" type="button" data-suit="verde">Killian Verde</button>
+                <button class="option-btn" type="button" data-suit="negro">Vipers Negro</button>
+                <button class="option-btn" type="button" data-suit="rojo">Vipers Rojo</button>
+            </div>
 
-            <label>Color Principal</label>
+            <label>Vista</label>
+            <div class="editor-options">
+                <button class="view-btn active" type="button" data-view="frontal">Frontal</button>
+                <button class="view-btn" type="button" data-view="trasero">Trasero</button>
+            </div>
 
-            <input type="color">
-
-            <label>Color Secundario</label>
-
-            <input type="color">
-
-            <button class="btn-primary">
-
-                Actualizar Diseño
-
-            </button>
+            <a href="#contacto" class="btn-primary editor-cta">
+                Solicitar cotización
+            </a>
 
         </div>
 
@@ -383,6 +375,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </footer>
 
 <script src="app.js"></script>
-
+<script type="module" src="editor3d.js"></script>
 </body>
 </html>
