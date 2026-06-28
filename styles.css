@@ -1017,18 +1017,27 @@ footer{
 
 @media(max-width:768px){
 
-    .header{
-        height:80px;
-        padding:0 20px;
-    }
+   .header{
+    height:80px;
+    padding:0 16px;
+    justify-content:flex-start;
+}
 
-    .logo-brand{
-        width:180px;
-    }
+.logo{
+    width:100%;
+    display:flex;
+    align-items:center;
+}
 
-    nav{
-        display:none;
-    }
+.logo-brand{
+    width:170px;
+    max-width:100%;
+    height:auto;
+}
+
+nav{
+    display:none;
+}
 
     section{
         padding:80px 24px;
