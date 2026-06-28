@@ -148,38 +148,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <section id="trajes" class="products">
 
     <div class="section-title">
-
         <span>MONOTRAJES</span>
-
         <h2>Modelos destacados</h2>
-
     </div>
 
-    <div class="product-grid">
-        <article class="product-card">
-            <div class="product-image"></div>
-            <h3>Killian Biker Shop Track</h3>
-            <p>Diseñado para Track Days.</p>
+    <div class="suit-catalog">
+
+        <article class="suit-card">
+            <h3>Traje Verde</h3>
+            <div class="suit-images">
+                <img src="images/tverdefrontal.jpeg" alt="Traje verde frontal">
+                <img src="images/tverdetrasero.jpeg" alt="Traje verde trasero">
+            </div>
         </article>
 
-        <article class="product-card">
-
-            <div class="product-image"></div>
-
-            <h3>Killian Biker Shop Pro</h3>
-
-            <p>Uso profesional y competición.</p>
-
+        <article class="suit-card">
+            <h3>Traje Negro</h3>
+            <div class="suit-images">
+                <img src="images/tnegrofrontal.jpeg" alt="Traje negro frontal">
+                <img src="images/tnegrotrasero.jpeg" alt="Traje negro trasero">
+            </div>
         </article>
 
-        <article class="product-card">
-
-            <div class="product-image"></div>
-
-            <h3>Killian Biker Shop Custom</h3>
-
-            <p>Personalización completa.</p>
-
+        <article class="suit-card">
+            <h3>Traje Rojo</h3>
+            <div class="suit-images">
+                <img src="images/trojofrontal.jpeg" alt="Traje rojo frontal">
+                <img src="images/trojotrasero.jpeg" alt="Traje rojo trasero">
+            </div>
         </article>
 
     </div>
@@ -212,7 +208,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             <label>Nombre</label>
 
-            <input type="text" placeholder="MARCO">
+            <input type="text" placeholder="">
 
             <label>Número</label>
 
@@ -348,9 +344,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         </button>
 
         <div class="whatsapp-menu">
-            <a href="https://wa.me/52NUMERO1" target="_blank">Ventas</a>
-            <a href="https://wa.me/52NUMERO2" target="_blank">Diseño</a>
-            <a href="https://wa.me/52NUMERO3" target="_blank">Soporte</a>
+            <a href="https://wa.me/523319019139" target="_blank">Ventas</a>
+            <a href="https://wa.me/525579983926" target="_blank">Diseño</a>
+            <a href="https://wa.me/525510137413" target="_blank">Soporte</a>
         </div>
     </div>
 
@@ -387,21 +383,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         © 2026 Killian Biker Shop · Todos los derechos reservados.
     </div>
 </footer>
-
-<script>
-const whatsappDropdown = document.querySelector(".whatsapp-dropdown");
-const whatsappToggle = document.querySelector(".whatsapp-toggle");
-
-whatsappToggle.addEventListener("click", () => {
-    whatsappDropdown.classList.toggle("active");
-});
-
-document.addEventListener("click", (e) => {
-    if(!whatsappDropdown.contains(e.target)){
-        whatsappDropdown.classList.remove("active");
-    }
-});
-</script>
-
 </body>
 </html>
