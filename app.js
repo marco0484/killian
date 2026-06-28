@@ -1,70 +1,80 @@
-const reveals = document.querySelectorAll('.reveal');
+document.addEventListener("DOMContentLoaded",()=>{
 
-const observer = new IntersectionObserver(entries => {
+    const reveals=document.querySelectorAll(".reveal");
 
-entries.forEach(entry => {
+    if(reveals.length){
+        const observer=new IntersectionObserver(entries=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{threshold:.15});
 
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
+        reveals.forEach(el=>observer.observe(el));
+    }
 
-});
+    const riderName=document.getElementById("riderName");
+    const riderNumber=document.getElementById("riderNumber");
+    const previewName=document.getElementById("previewName");
+    const previewNumber=document.getElementById("previewNumber");
 
-});
+    if(riderName&&previewName){
+        riderName.addEventListener("input",()=>{
+            previewName.textContent=riderName.value.trim()||"MARCO";
+        });
+    }
 
-reveals.forEach(el => observer.observe(el));
+    if(riderNumber&&previewNumber){
+        riderNumber.addEventListener("input",()=>{
+            previewNumber.textContent=riderNumber.value.trim()||"99";
+        });
+    }
 
-const riderName = document.getElementById('riderName');
-const riderNumber = document.getElementById('riderNumber');
+    const colors=document.querySelectorAll(".color");
 
-const previewName = document.getElementById('previewName');
-const previewNumber = document.getElementById('previewNumber');
-
-riderName.addEventListener('input', () => {
-previewName.textContent = riderName.value || 'MARCO';
-});
-
-riderNumber.addEventListener('input', () => {
-previewNumber.textContent = riderNumber.value || '99';
-});
-
-document.querySelectorAll('.color').forEach(btn=>{
-
-btn.addEventListener('click',()=>{
-
-document
-.querySelectorAll('.color')
-.forEach(b=>b.classList.remove('active'));
-
-btn.classList.add('active');
-
-});
-
-});
-
-window.addEventListener('scroll',()=>{
-
-const header=document.querySelector('.header');
-
-if(window.scrollY > 80){
-header.style.background='rgba(0,0,0,.85)';
-}else{
-header.style.background='rgba(0,0,0,.4)';
-}
-
-});
-
-const whatsappDropdown = document.querySelector(".whatsapp-dropdown");
-const whatsappToggle = document.querySelector(".whatsapp-toggle");
-
-if(whatsappDropdown && whatsappToggle){
-    whatsappToggle.addEventListener("click", () => {
-        whatsappDropdown.classList.toggle("active");
+    colors.forEach(btn=>{
+        btn.addEventListener("click",()=>{
+            colors.forEach(color=>color.classList.remove("active"));
+            btn.classList.add("active");
+        });
     });
 
-    document.addEventListener("click", (e) => {
-        if(!whatsappDropdown.contains(e.target)){
+    const header=document.querySelector(".header");
+
+    if(header){
+        const toggleHeader=()=>{
+            header.classList.toggle("scrolled",window.scrollY>80);
+        };
+
+        toggleHeader();
+        window.addEventListener("scroll",toggleHeader,{passive:true});
+    }
+
+    const whatsappDropdown=document.querySelector(".whatsapp-dropdown");
+    const whatsappToggle=document.querySelector(".whatsapp-toggle");
+    const whatsappMenu=document.querySelector(".whatsapp-menu");
+
+    if(whatsappDropdown&&whatsappToggle&&whatsappMenu){
+        whatsappToggle.addEventListener("click",(e)=>{
+            e.stopPropagation();
+            whatsappDropdown.classList.toggle("active");
+        });
+
+        whatsappMenu.addEventListener("click",(e)=>{
+            e.stopPropagation();
+        });
+
+        document.addEventListener("click",()=>{
             whatsappDropdown.classList.remove("active");
-        }
-    });
-}
+        });
+
+        document.addEventListener("keydown",(e)=>{
+            if(e.key==="Escape"){
+                whatsappDropdown.classList.remove("active");
+            }
+        });
+    }
+
+});
