@@ -147,35 +147,120 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <div class="section-title">
         <span>MONOTRAJES</span>
-        <h2>Modelos destacados</h2>
+        <h2>Elige tu línea</h2>
     </div>
 
-    <div class="suit-catalog">
+    <div class="suit-tabs">
+        <button class="suit-tab active" type="button" data-linea="linea1">Línea 1</button>
+        <button class="suit-tab" type="button" data-linea="linea2">Línea Premium 💎</button>
+    </div>
 
-        <article class="suit-card">
-            <h3>Traje Verde</h3>
-            <div class="suit-images">
-                <img src="images/tverdefrontal.webp" alt="Traje verde frontal">
-                <img src="images/tverdetrasero.webp" alt="Traje verde trasero">
-            </div>
-        </article>
+    <div class="suit-line active" data-linea-content="linea1">
 
-        <article class="suit-card">
-            <h3>Linea Vipers</h3>
-            <div class="suit-images">
-                <img src="images/tnegrofrontal.webp" alt="Traje negro frontal">
-                <img src="images/tnegrotrasero.webp" alt="Traje negro trasero">
-            </div>
-        </article>
+        <div class="suit-info-grid">
 
-        <article class="suit-card">
-            <h3>Linea Vipers</h3>
-            <div class="suit-images">
-                <img src="images/trojofrontal.webp" alt="Traje rojo frontal">
-                <img src="images/trojotrasero.webp" alt="Traje rojo trasero">
-            </div>
-        </article>
+            <article class="suit-info-card">
+                <span class="suit-badge">Básico</span>
+                <h3>Traje Básico</h3>
+                <strong>$11,500 MXN</strong>
+                <ul>
+                    <li>Piel de vaca 1.3 mm</li>
+                    <li>Puños y tobillos en neopreno</li>
+                    <li>Cierre metálico reforzado YKK</li>
+                    <li>Protección europea nivel 2</li>
+                    <li>Joroba, espalda, hombros y codos</li>
+                    <li>Cadera, espinillas y rodillas</li>
+                    <li>Forro integrado</li>
+                </ul>
+            </article>
 
+            <article class="suit-info-card featured">
+                <span class="suit-badge">Recomendado</span>
+                <h3>Traje Intermedio</h3>
+                <strong>$15,500 MXN</strong>
+                <ul>
+                    <li>Piel de vaca 1.3 mm</li>
+                    <li>Protección europea nivel 2</li>
+                    <li>Forro desprendible</li>
+                    <li>Sellos de goma en broches</li>
+                    <li>Tank grip en rodillas</li>
+                    <li>Kevlar en zonas elásticas</li>
+                    <li>Mejor higiene y comodidad</li>
+                </ul>
+            </article>
+
+            <article class="suit-info-card">
+                <span class="suit-badge">Top</span>
+                <h3>Traje Top</h3>
+                <strong>$19,500 MXN</strong>
+                <ul>
+                    <li>Piel de canguro</li>
+                    <li>Puños y tobillos en neopreno</li>
+                    <li>Cierre metálico reforzado YKK</li>
+                    <li>Protección europea nivel 2</li>
+                    <li>Forro desprendible</li>
+                    <li>Mayor ligereza</li>
+                    <li>Mayor nivel de desempeño</li>
+                </ul>
+            </article>
+
+        </div>
+
+        <div class="suit-gallery-compact">
+            <img src="images/tverdefrontal.webp" alt="Traje verde frontal">
+            <img src="images/tverdetrasero.webp" alt="Traje verde trasero">
+        </div>
+
+    </div>
+
+    <div class="suit-line" data-linea-content="linea2">
+
+        <div class="suit-info-grid">
+
+            <article class="suit-info-card featured">
+                <span class="suit-badge">Premium</span>
+                <h3>Vipers Vaca</h3>
+                <strong>$16,000 MXN</strong>
+                <ul>
+                    <li>Piel de vaca 1.3 mm</li>
+                    <li>Joroba desprendible</li>
+                    <li>Forro desprendible</li>
+                    <li>Sellos de goma en broches</li>
+                    <li>Tank grip en rodillas</li>
+                    <li>Kevlar en zonas elásticas</li>
+                    <li>Protección europea nivel 2</li>
+                </ul>
+            </article>
+
+            <article class="suit-info-card">
+                <span class="suit-badge">Elite</span>
+                <h3>Vipers Canguro</h3>
+                <strong>$21,500 MXN</strong>
+                <ul>
+                    <li>Piel de canguro</li>
+                    <li>Joroba desprendible</li>
+                    <li>Forro desprendible</li>
+                    <li>Sellos de goma en broches</li>
+                    <li>Tank grip en rodillas</li>
+                    <li>Kevlar en zonas elásticas</li>
+                    <li>Protección europea nivel 2</li>
+                </ul>
+            </article>
+
+        </div>
+
+        <div class="suit-gallery-compact">
+            <img src="images/tnegrofrontal.webp" alt="Traje negro frontal">
+            <img src="images/tnegrotrasero.webp" alt="Traje negro trasero">
+            <img src="images/trojofrontal.webp" alt="Traje rojo frontal">
+            <img src="images/trojotrasero.webp" alt="Traje rojo trasero">
+        </div>
+
+    </div>
+
+    <div class="image-lightbox" id="imageLightbox">
+        <button type="button" class="lightbox-close">×</button>
+        <img src="" alt="Vista completa">
     </div>
 
 </section>

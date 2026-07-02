@@ -36,4 +36,48 @@ document.addEventListener("DOMContentLoaded",()=>{
         });
     }
 
+const suitTabs = document.querySelectorAll('.suit-tab');
+const suitLines = document.querySelectorAll('.suit-line');
+
+function showSuitLine(linea){
+    suitLines.forEach(line=>{
+        line.classList.toggle('active', line.dataset.lineaContent === linea);
+    });
+
+    suitTabs.forEach(tab=>{
+        tab.classList.toggle('active', tab.dataset.linea === linea);
+    });
+}
+
+suitTabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+        showSuitLine(tab.dataset.linea);
+    });
+});
+
+showSuitLine('linea1');
+
+const lightbox = document.getElementById('imageLightbox');
+const lightboxImg = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.suit-gallery-compact img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+    });
+});
+
+lightboxClose.addEventListener('click', ()=>{
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', e=>{
+    if(e.target === lightbox){
+        lightbox.classList.remove('active');
+    }
+});
+
+
 });
