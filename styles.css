@@ -1,26 +1,17 @@
 :root{
-
     --bg:#050505;
     --bg-soft:#0d0d0d;
-
     --card:#111111;
     --card-hover:#181818;
-
     --text:#ffffff;
     --muted:#9a9a9a;
-
     --primary:#5bd43b;
     --primary-dark:#38a41d;
     --primary-light:#78ff54;
-
     --border:rgba(91,212,59,.15);
     --glow:rgba(91,212,59,.35);
-
     --radius:24px;
-
 }
-
-/* RESET */
 
 *{
     margin:0;
@@ -33,17 +24,11 @@ html{
 }
 
 body{
-
     background:var(--bg);
-
     color:var(--text);
-
     font-family:'Inter',sans-serif;
-
     overflow-x:hidden;
-
     line-height:1.6;
-
 }
 
 img{
@@ -81,28 +66,19 @@ section{
 /* HEADER */
 
 .header{
-
     position:fixed;
     top:0;
     left:0;
-
     width:100%;
     height:95px;
-
     padding:0 4%;
-
     display:flex;
     align-items:center;
-
     justify-content:space-between;
-
     gap:50px;
-
     background:rgba(0,0,0,.85);
     backdrop-filter:blur(20px);
-
     border-bottom:1px solid rgba(91,212,59,.08);
-
     z-index:1000;
 }
 
@@ -153,70 +129,32 @@ nav a:hover{
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
     overflow:hidden;
-    background:
-    radial-gradient(
-        circle at top,
-        rgba(91,212,59,.12),
-        transparent 35%
-    );
-
+    background:#050505;
 }
 
 .hero::before{
     content:"";
     position:absolute;
     inset:0;
-    background-image:url("../images/trebol.webp");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:900px;
-    opacity:.08;
-    filter:grayscale(100%) brightness(1.2);
-    pointer-events:none;
-}
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:1200px;
-    height:1200px;
-
-    left:50%;
-    top:55%;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-        circle,
-        rgba(91,212,59,.15),
-        transparent 70%
-    );
-
-    pointer-events:none;
+    background:url("../images/trebol.webp") center center no-repeat;
+    background-size:700px;
+    opacity:.18;
+    filter:none;
+    z-index:0;
 
 }
 
 .hero-overlay{
-
     position:absolute;
-
     inset:0;
-
     background:
     linear-gradient(
+        to bottom,
         rgba(0,0,0,.15),
-        rgba(0,0,0,.55)
+        rgba(0,0,0,.35)
     );
-
+    z-index:1;
 }
 
 .hero-content{
@@ -238,9 +176,11 @@ nav a:hover{
 
 .hero h1{
     font-family:"Bebas Neue",sans-serif;
-    font-size:clamp(5rem,12vw,10rem);
-    letter-spacing:3px;
-    line-height:.85;
+    font-size:clamp(3.4rem,8vw,7rem);
+    letter-spacing:1px;
+    line-height:.92;
+    max-width:760px;
+    margin:0 auto 18px;
 }
 
 .hero p{
@@ -1013,14 +953,40 @@ footer{
 }
 
 .suit-tab{
-    border:1px solid rgba(91,212,59,.22);
-    background:#0d0d0d;
-    color:#fff;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     padding:14px 28px;
     border-radius:999px;
-    font-weight:800;
+    border:1px solid rgba(91,212,59,.25);
+    background:#0d0d0d;
+    color:#fff;
+    font-weight:900;
+    font-size:1rem;
     cursor:pointer;
     transition:.25s ease;
+}
+
+.suit-tab img{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 6px rgba(91,212,59,.45));
+}
+
+.suit-tab:hover,
+.suit-tab.active{
+    background:var(--primary);
+    color:#000;
+    border-color:var(--primary);
+}
+
+.vipers-grid{
+    grid-template-columns:repeat(2,1fr);
+    max-width:980px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .suit-tab:hover,
@@ -1366,5 +1332,10 @@ nav{
 
     .suit-gallery-compact img{
         height:180px;
+    }
+
+     .vipers-grid{
+        grid-template-columns:1fr;
+        max-width:none;
     }
 }
