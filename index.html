@@ -316,9 +316,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </div>
 
     <div class="editor-layout">
-        <div class="suit-preview">
-    <div id="viewer3d"></div>
+<div class="suit-preview">
+    <div class="editor2d-canvas" id="editor2dCanvas"></div>
+    <label>Pieza seleccionada</label>
+<div id="selectedPieceName" class="selected-piece-name">Ninguna</div>
 
+<label>Color</label>
+<input type="color" id="pieceColor" value="#5bd43b">
 </div>
 
         <div class="editor-panel">
@@ -511,6 +515,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
   }
 }
 </script>
-<script type="module" src="editor3d.js"></script>
-</body>
+<script src="pieces.js"></script>
+<script src="app.js"></script>
 </html>
