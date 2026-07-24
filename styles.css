@@ -1,6 +1,6 @@
 /* =========================================================
-   KILLIAN BIKER SHOP - STYLES ORDENADO V2
-   CSS limpio, sin !important y sin reglas duplicadas
+   KILLIAN BIKER SHOP - STYLES MEJORADO V3
+   Mobile-first · UI premium · mismas clases / compatibilidad JS
    ========================================================= */
 
 /* 01. VARIABLES */
@@ -16,8 +16,11 @@
   --primary-dark:#39a91f;
   --border:rgba(91,212,59,.16);
   --border-soft:rgba(255,255,255,.09);
-  --shadow:0 26px 80px rgba(0,0,0,.42);
+  --shadow:0 24px 70px rgba(0,0,0,.38);
+  --shadow-soft:0 12px 32px rgba(0,0,0,.24);
   --radius:22px;
+  --radius-sm:16px;
+  --content:1180px;
   --header-h:74px;
 }
 
@@ -37,7 +40,7 @@ body{
   min-width:320px;
   overflow-x:hidden;
   background:
-    radial-gradient(circle at 50% -10%,rgba(91,212,59,.08),transparent 32%),
+    radial-gradient(circle at 50% -8%,rgba(91,212,59,.055),transparent 30%),
     var(--bg);
   color:var(--text);
   font-family:'Inter',sans-serif;
@@ -67,6 +70,25 @@ button{
   border:0;
 }
 
+::selection{
+  background:rgba(91,212,59,.28);
+  color:#fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:3px;
+}
+
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+  transform:none;
+}
+
+
 section{
   padding:64px 18px;
 }
@@ -84,8 +106,8 @@ section{
   justify-content:space-between;
   gap:24px;
   padding:0 18px;
-  background:rgba(0,0,0,.9);
-  border-bottom:1px solid rgba(91,212,59,.16);
+  background:rgba(5,5,5,.88);
+  border-bottom:1px solid rgba(255,255,255,.07);
   backdrop-filter:blur(18px);
   transition:height .22s ease,background .22s ease,box-shadow .22s ease;
 }
@@ -152,7 +174,7 @@ nav a:hover{
   justify-content:center;
   gap:10px;
   padding:13px 20px;
-  border-radius:999px;
+  border-radius:14px;
   font-weight:900;
   text-align:center;
   cursor:pointer;
@@ -161,8 +183,8 @@ nav a:hover{
 
 .btn-primary{
   color:#050505;
-  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  box-shadow:0 18px 34px rgba(91,212,59,.18);
+  background:var(--primary);
+  box-shadow:0 10px 26px rgba(91,212,59,.14);
 }
 
 .btn-secondary{
@@ -378,10 +400,9 @@ nav a:hover{
   padding:22px;
   border:1px solid var(--border);
   border-radius:var(--radius);
-  background:
-    radial-gradient(circle at top right,rgba(91,212,59,.09),transparent 34%),
-    linear-gradient(180deg,#121212,#090909);
-  box-shadow:0 18px 50px rgba(0,0,0,.18);
+  background:#0d0d0d;
+  box-shadow:var(--shadow-soft);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
 }
 
 .service-card h3{
@@ -393,6 +414,14 @@ nav a:hover{
 .service-card p{
   color:var(--muted);
   font-size:.94rem;
+}
+
+@media(hover:hover){
+  .service-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(91,212,59,.34);
+    background:#101010;
+  }
 }
 
 /* 09. PRODUCTOS */
@@ -459,7 +488,7 @@ nav a:hover{
   padding:18px;
   border:1px solid var(--border);
   border-radius:var(--radius);
-  background:linear-gradient(180deg,#121212,#0a0a0a);
+  background:#0e0e0e;
   box-shadow:0 18px 50px rgba(0,0,0,.18);
 }
 
@@ -555,7 +584,7 @@ nav a:hover{
 .editor-visual-card,
 .editor-control-card{
   border:1px solid var(--border-soft);
-  background:linear-gradient(180deg,rgba(22,22,22,.96),rgba(7,7,7,.98));
+  background:#0c0c0c;
   box-shadow:var(--shadow);
 }
 
@@ -616,9 +645,9 @@ nav a:hover{
 .tool-btn:hover,
 .view-btn.active,
 .zone-btn.active{
-  background:#ffffff;
+  background:var(--primary);
   color:#050505;
-  border-color:#ffffff;
+  border-color:var(--primary);
 }
 
 .editor2d-canvas{
@@ -844,7 +873,7 @@ nav a:hover{
 }
 
 .editor-tab.active{
-  background:#fff;
+  background:var(--primary);
   color:#050505;
 }
 
@@ -1016,10 +1045,8 @@ nav a:hover{
   text-align:left;
   border:1px solid rgba(91,212,59,.18);
   border-radius:24px;
-  background:
-    radial-gradient(circle at top right,rgba(91,212,59,.11),transparent 34%),
-    linear-gradient(180deg,#121212,#070707);
-  box-shadow:0 18px 50px rgba(0,0,0,.28);
+  background:#0d0d0d;
+  box-shadow:var(--shadow-soft);
   overflow:hidden;
 }
 
@@ -1216,8 +1243,7 @@ footer .story-brand-text span{
 }
 
 .header{
-  height:72px;
-  padding:0 56px;
+  height:var(--header-h);
 }
 
 .logo{
@@ -1328,7 +1354,7 @@ footer .story-brand-text span{
     gap:12px;
     border:1px solid rgba(255,255,255,.08);
     border-radius:18px;
-    background:linear-gradient(180deg,#111,#090909);
+    background:#0d0d0d;
     transition:.25s ease;
 }
 
@@ -1635,5 +1661,107 @@ footer .story-brand-text span{
 
   .hero h1{
     font-size:3.5rem;
+  }
+}
+
+
+/* =========================================================
+   16. PULIDO FINAL V3
+   ========================================================= */
+
+.header,
+.editor-tabs,
+.editor-control-card{
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.section-title h2,
+.contact h2,
+.footer-heading h2{
+  text-wrap:balance;
+}
+
+.service-card,
+.suit-info-card,
+.editor-visual-card,
+.editor-control-card,
+.process-step,
+.step{
+  border-color:rgba(255,255,255,.08);
+}
+
+.suit-info-card.featured{
+  border-color:rgba(91,212,59,.38);
+}
+
+.suit-gallery-compact img{
+  background:#0b0b0b;
+}
+
+.suit-gallery-compact img:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:3px;
+}
+
+.editor-control-card input[type="text"]::placeholder{
+  color:#626262;
+}
+
+.footer-social a{
+  border-radius:16px;
+}
+
+@media(hover:hover){
+  .btn-primary:hover{
+    background:#6be04a;
+    box-shadow:0 14px 30px rgba(91,212,59,.2);
+  }
+
+  .btn-secondary:hover{
+    border-color:rgba(91,212,59,.35);
+    background:rgba(91,212,59,.06);
+  }
+}
+
+@media(max-width:767px){
+  section{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .hero{
+    min-height:82svh;
+    padding-top:calc(var(--header-h) + 58px);
+  }
+
+  .hero h1{
+    line-height:.88;
+  }
+
+  .editor-visual-card,
+  .editor-control-card{
+    border-radius:20px;
+  }
+
+  .editor2d-canvas{
+    border-radius:18px;
+  }
+
+  .editor-tabs{
+    top:64px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms;
+    animation-iteration-count:1;
+    transition-duration:.01ms;
   }
 }
