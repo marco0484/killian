@@ -22,7 +22,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <a href="#historia">Historia</a>
         <a href="#servicios">Servicios</a>
         <a href="#trajes">Monotrajes</a>
-        <a href="#editor">Editor</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
@@ -43,9 +42,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         </p>
 
         <div class="hero-actions">
-            <a href="#editor" class="btn-primary">
-                Diseñar Mi Traje
-            </a>
 
             <a href="#trajes" class="btn-secondary">
                 Ver Catálogo
@@ -312,112 +308,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </div>
 
 </section>
-
-<section id="editor" class="editor editor-v2">
-    <div class="section-title editor-title-v2">
-        <span>CONFIGURADOR PREMIUM</span>
-        <h2>Diseña tu traje</h2>
-        <p>Elige una vista, selecciona una pieza o aplica colores por zona completa.</p>
-    </div>
-
-    <div class="editor-shell">
-        <div class="editor-visual-card">
-            <div class="editor-topbar">
-                <div>
-                    <span class="editor-mini-label">Vista actual</span>
-                    <strong id="editorCurrentViewLabel">Frontal</strong>
-                </div>
-                <div class="editor-view-actions">
-                    <button class="view-btn active" type="button" data-view="front">Frontal</button>
-                    <button class="view-btn" type="button" data-view="back">Trasero</button>
-                    <button class="view-btn" type="button" data-view="perfil">Perfil</button>
-                </div>
-            </div>
-
-            <div class="editor2d-canvas" id="editor2dCanvas">
-                <div class="suit-stage" id="suitStage"></div>
-                <div class="editor-text-layer" id="editorTextLayer"></div>
-                <div class="editor-custom-layer" id="editorCustomLayer"></div>
-            </div>
-
-            <div class="editor-statusbar">
-                <div>
-                    <span>Pieza seleccionada</span>
-                    <strong id="selectedPieceName">Ninguna</strong>
-                </div>
-                <div>
-                    <span>Zona</span>
-                    <strong id="selectedZoneName">Sin zona</strong>
-                </div>
-            </div>
-        </div>
-
-        <aside class="editor-control-card">
-            <div class="editor-tabs" role="tablist">
-                <button class="editor-tab active" type="button" data-panel="design">Diseño</button>
-                <button class="editor-tab" type="button" data-panel="identity">Texto</button>
-                <button class="editor-tab" type="button" data-panel="assets">Logos</button>
-            </div>
-
-            <div class="editor-panel-section active" data-panel-content="design">
-                <label>Preset rápido</label>
-                <div class="preset-grid">
-                    <button class="preset-card active" type="button" data-preset="killian">
-                        <span class="preset-preview killian"></span>
-                        <strong>Killian</strong>
-                        <small>Verde / negro</small>
-                    </button>
-                    <button class="preset-card" type="button" data-preset="viper">
-                        <span class="preset-preview viper"></span>
-                        <strong>Vipers</strong>
-                        <small>Negro / gris</small>
-                    </button>
-                    <button class="preset-card" type="button" data-preset="racing">
-                        <span class="preset-preview racing"></span>
-                        <strong>Racing</strong>
-                        <small>Rojo / blanco</small>
-                    </button>
-                </div>
-
-                <label>Color activo</label>
-                <div class="color-row">
-                    <input type="color" id="pieceColor" value="#5bd43b">
-                    <button class="tool-btn compact" type="button" id="applyPieceBtn">Aplicar pieza</button>
-                    <button class="tool-btn compact" type="button" id="applyZoneBtn">Aplicar zona</button>
-                </div>
-
-                <label>Zonas del traje</label>
-                <div class="zone-grid">
-                    <button class="zone-btn active" type="button" data-zone="base">Base cuero</button>
-                    <button class="zone-btn" type="button" data-zone="torso">Torso</button>
-                    <button class="zone-btn" type="button" data-zone="arms">Brazos</button>
-                    <button class="zone-btn" type="button" data-zone="legs">Piernas</button>
-                    <button class="zone-btn" type="button" data-zone="details">Detalles</button>
-                    <button class="zone-btn" type="button" data-zone="protection">Protecciones</button>
-                </div>
-            </div>
-
-            <div class="editor-panel-section" data-panel-content="identity">
-                <label>Nombre del piloto</label>
-                <input id="riderName" type="text" placeholder="Ej. MARCO" maxlength="14">
-                <label>Número</label>
-                <input id="riderNumber" type="text" placeholder="99" maxlength="3">
-                <button class="tool-btn full" type="button" id="addTextBtn">Agregar texto libre</button>
-            </div>
-
-            <div class="editor-panel-section" data-panel-content="assets">
-                <label>Logos y salida</label>
-                <button class="tool-btn full" type="button" id="addLogoBtn">Subir logo</button>
-                <button class="tool-btn full" type="button" id="exportDesignBtn">Exportar PNG</button>
-                <input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp" hidden>
-                <p class="editor-note">Puedes arrastrar logos y textos sobre el traje.</p>
-            </div>
-
-            <a href="#contacto" class="btn-primary editor-cta">Solicitar cotización</a>
-        </aside>
-    </div>
-</section>
-
 <section class="process" id="proceso">
   <div class="section-title">
     <span>PROCESO</span>
@@ -434,7 +324,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     <article class="process-step">
       <span>02</span>
       <h3>Diseño</h3>
-      <p>Preparamos o prepara tu mismo la propuesta visual del traje antes de pasar a producción.</p>
+      <p>Preparamos la propuesta visual del traje antes de pasar a producción.</p>
     </article>
 
     <article class="process-step">
@@ -453,7 +343,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section id="contacto" class="contact">
 
-    <h2>¿Listo para diseñar tu traje?</h2>
+    <h2>¿Listo para tu próximo traje?</h2>
 
     <div class="whatsapp-dropdown">
         <button class="btn-primary whatsapp-toggle" type="button">
@@ -515,7 +405,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </div>
 
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <!--<script src="js/killian-pieces.js"></script> -->
 <script src="js/app.js"></script>
 </body>
