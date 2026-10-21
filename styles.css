@@ -1231,6 +1231,10 @@ footer{
 /* =========================
    15. TABLET
    ========================= */
+/* GALERÍA DE PRODUCTO — EDITORIAL RACING */
+.suit-gallery-compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;min-width:0;align-items:stretch}
+.suit-gallery-compact img{display:block;width:100%;min-width:0;height:clamp(230px,56vw,360px);padding:10px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:radial-gradient(ellipse at 50% 38%,rgba(140,255,98,.07),transparent 58%),linear-gradient(145deg,#171b17 0%,#0d100d 58%,#080a08 100%);object-fit:contain;cursor:zoom-in;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,background .3s ease}
+@media(hover:hover){.suit-gallery-compact img:hover{transform:translateY(-5px);border-color:rgba(140,255,98,.42);box-shadow:0 22px 48px rgba(0,0,0,.35)}}
 @media(min-width:560px){
   .hero-actions{
     grid-template-columns:1fr 1fr;
