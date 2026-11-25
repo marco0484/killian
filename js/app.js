@@ -99,8 +99,8 @@
       const image = Dom.one("img", lightbox);
       const closeButton = Dom.one(".lightbox-close", lightbox);
 
-      Dom.all(".suit-gallery-compact img").forEach(item => {
-        item.addEventListener("click", () => {
+Dom.all(".suit-card-gallery img").forEach(item => {
+          item.addEventListener("click", () => {
           image.src = item.src;
           image.alt = item.alt || "Vista completa";
           lightbox.classList.add("active");
